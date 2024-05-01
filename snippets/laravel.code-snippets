@@ -1,0 +1,101 @@
+{
+    
+"initialize route for api": {
+    "prefix": "laravel-route-api",
+    "body": [
+        "Route::${1|post,get,delete,put|}('${2:route}', [${3:controller}::class, '$2']);",
+    ],
+},
+"initialize middleware": {
+    "prefix": "laravel-route-middleware",
+    "body": [
+        "Route::middleware(['${1|auth:sanctum|}'])",
+    ],
+},
+"initialize group": {
+    "prefix": "laravel-route-group",
+    "body": [
+        "group(function ($1) {${2:route}});",
+    ],
+},
+"initialize item": {
+    "prefix": "laravel-item",
+    "body": [
+        "$$table->${1|string,id,timestamp,rememberToken,timestamps,bigInteger,char,date,integer,boolean,decimal,enum,float,mediumInteger,mediumText,text,time,uuid|}('${2:name}')${3|->unique(),->nullable(),->unsigned()|}",
+    ],
+},
+"initialize model": {
+    "prefix": "laravel-model",
+    "body": [
+        "${1:protected $$table = '$2'}",
+        "protected $$fillable = [",
+        "    ${3:fields}, $0",
+        "];",
+    ],
+},
+"initialize public function": {
+    "prefix": "laravel-function-public",
+    "body": [
+        "public function ${1:functionName}(${2| ,Request $request|}){",
+        "    $0",
+        "}",
+    ],
+},
+
+"initialize validation for request": {
+    "prefix": "laravel-v-validate",
+    "body": [
+        "$${1:$request}->validate([",
+        "    '${2:fields}' => ${3:rules},",
+        "])"
+    ],
+},
+"initialize rules for validation": {
+    "prefix": "laravel-v-rules",
+    "body": [
+        "'${1|required,max:,min:,string,integer,enum,in:,mimes:|}'"
+    ],
+},
+"initialize where for controller": {
+    "prefix": "laravel-c-where",
+    "body": [
+        "where('${1:field}', ${2:value})${3| ,->first()|}"
+    ],
+},
+"initialize return message with code": {
+    "prefix": "laravel-return-message",
+    "body": [
+        "return response()->json([",
+        "    'message' => '${1:message}',",
+        "]$2);$0",
+    ],
+},
+"initialize return json": {
+    "prefix": "laravel-return-json",
+    "body": [
+        "return response()->json($2)$0",
+    ],
+},
+"initialize store": {
+    "prefix": "laravel-store-file",
+    "body": [
+        "//storage link!",
+        "${1:$$request}->file('${2:files}')->store('${3:folder}', '${4:public}')$0"
+    ],
+},
+"initialize create": {
+    "prefix": "laravel-create",
+    "body": [
+        "${1:Model}::create([",
+        "    '${2:fields}' => ${3:values},",
+        "    $0",
+        "]);"
+    ],
+},
+"word-5": {
+    "prefix": "plainTextToken",
+    "body": [
+        "plainTextToken",
+    ],
+},
+}
