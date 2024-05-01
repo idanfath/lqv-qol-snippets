@@ -4,16 +4,31 @@
   "description": "Basic quality of life snippets for laravel, vue, and quasar. This helps save time:)",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.88.0"
+    "vscode": "^1.8.0"
   },
   "categories": [
     "Snippets"
   ],
+  "publisher": "erik-khaa",
+  "icon": "icons/logo.jng",
+  "author": {
+    "name": "Erik Khaa",
+    "email": "arfounded@gmail.com",
+    "url": "https://github.com/idanfath"
+  },
+  "repository": {
+    "url": "https://github.com/idanfath/lqv-qol-snippets",
+    "type": "git"
+  },
   "contributes": {
     "snippets": [
       {
-        "language": "",
-        "path": "./snippets/snippets.code-snippets"
+        "language": "global",
+        "path": "./snippets/vue.code-snippets"
+      },
+      {
+        "language": "global",
+        "path": "./snippets/laravel.code-snippets"
       }
     ]
   }
