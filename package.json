@@ -2,7 +2,7 @@
   "name": "lvq-qol-snippets",
   "displayName": "LVQ QOL Snippets",
   "description": "Basic quality of life snippets for laravel, vue, and quasar. This helps save time:)",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.8.0"
   },
@@ -10,7 +10,7 @@
     "Snippets"
   ],
   "publisher": "erik-khaa",
-  "icon": "icons/logo.jng",
+  "icon": "icons/logo.jpg",
   "author": {
     "name": "Erik Khaa",
     "email": "arfounded@gmail.com",
@@ -23,11 +23,27 @@
   "contributes": {
     "snippets": [
       {
-        "language": "global",
+        "language": "javascript",
         "path": "./snippets/vue.code-snippets"
       },
       {
-        "language": "global",
+        "language": "html",
+        "path": "./snippets/vue.code-snippets"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/vue.code-snippets"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/laravel.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/laravel.code-snippets"
+      },
+      {
+        "language": "html",
         "path": "./snippets/laravel.code-snippets"
       }
     ]
