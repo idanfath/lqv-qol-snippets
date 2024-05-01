@@ -1,0 +1,391 @@
+{
+	// THIS IS FOR THE SAKE OF TIME SAVING
+	// IF YOU LIKE WHAT I MADE
+	// FEEL FREE TO COPY!!
+	
+	"initialize export for vue": {
+		// "scope": "javascript,typescript",
+		"prefix": "init-export",
+		"body": [
+			"export default {",
+			//get the file name
+			"  name: '${TM_FILENAME_BASE}',",
+			"}"
+		],
+		// "description": "Log output to console"
+	},
+	"initialize import components": {
+		"prefix": "init-components",
+		"body": [
+			"import ${1:moduleName} from '@/components/${1}.vue'",
+		],
+	},
+	"initialize import": {
+		"prefix": "init-import",
+		"body": [
+			"import { ${1|mapGetters,mapState,mapAction,store,ref|} } from '${2|vuex,vue,axios,@/store|}'",
+		],
+	},
+	"initialize import without curly bracket": {
+		"prefix": "init-import-v2",
+		"body": [
+			"import ${1|store|} from '${2|@/,./,../|}'",
+		],
+	},
+	"initialize options inside export": {
+		"prefix": "init-e-options",
+		"body": [
+			"$1: {",
+			"  $2",	
+			"},"
+		],
+	},
+	"initialize ... inside options": {
+		"prefix": "init-o-map",
+		"body": [
+			"...$1({ ${2:function}: $3 })$0"
+		],
+	},
+	"console.log": {
+		"prefix": "cl",
+		"body": [
+			"console.log($1)$0"
+		],
+	},
+	"router replace/push": {
+		"prefix": "init-router",
+		"body": [
+			"this.$router.${1|replace,push|}({",
+			"  name: '${2:routeName}',",
+			"})$0"
+		],
+	},
+	"then": {
+		"prefix": "init-then",
+		"body": [
+			"then((${1}) => {$2})$0"
+		],
+	},
+	"catch": {
+		"prefix": "init-catch",
+		"body": [
+			"catch((${1}) => {$2})$0"
+		],
+	},
+	"response.data.message": {
+		"prefix": "init-rdm",
+		"body": [
+			"response.data.message"
+		],
+	},
+	"initialize headers check": {
+		"prefix": "init-dhc",
+		"body": [
+			"defaults.headers.common[$1]$0"
+		],
+	},
+	"initialize switch without default": {
+		"prefix": "init-switch",
+		"body": [
+			"switch (${1:key}) {",
+			"  case ${2:value} :",
+			"    ${3}",
+			"    break;",
+			"}$0"
+		],
+	},
+	"axios": {
+		"prefix": "init-axios",
+		"body": [
+			"axios.${1|get,post,put,delete|}('${2:url}'${3:, credentials})$0"
+		],
+	},
+	
+	"initialize subscribe axios": {
+		"prefix": "init-subscribe",
+		"body": [
+			"store.subscribe((${1}) => {$2})$0"
+		],
+	},
+	"word": {
+		"prefix": "Authorization",
+		"body": [
+			"'Authorization'"
+		],
+	},
+	"word-2": {
+		"prefix": "mutation",
+		"body": [
+			"mutation"
+		],
+	},
+	"word-3": {
+		"prefix": "credentials",
+		"body": [
+			"credentials"
+		],
+	},
+	"initialize axios default url": {
+		"prefix": "init-axios-defaulturl",
+		"body": [
+			"axios.defaults.baseURL='${1:url}'"
+		],
+	},
+	"initialize view import in router": {
+		"prefix": "init-router-componentimport",
+		"body": [
+			"component: ($1) => import('${2:../views/}'),$0"
+		],
+	},
+	"initialize before-enter in router": {
+		"prefix": "init-router-beforeenter",
+		"body": [
+			"beforeEnter: (to, from, next) => {$4},$0"
+		],
+	},
+	"initialize store.getter": {
+		"prefix": "init-store-getter",
+		"body": [
+			"store.getters['${1|getterName|}']$0"
+		],
+	},
+	"initialize next": {
+		"prefix": "init-next",
+		"body": [
+			"next({${1:param}: ${2:value}})$0"
+		],
+	},
+	"initialize route making in router": {
+		"prefix": "init-router-make",
+		"body": [
+			"{",
+			"  path: '/${1:path}',",
+			"  name: '${1:name}',",
+			"  component: ($3) => import('${4:../views/}$5'),",
+			"},$0"
+		],
+	},
+	"initialize setup return": {
+		"prefix": "init-setup-return",
+		"body": [
+			"return {",
+			"  return {",
+			"    $1",
+			"  }",
+			"}$0"
+		],
+	},
+	
+	"initialize props": {
+		"prefix": "init-props",
+		"body": [
+			"props: {",
+			"  $1",
+			"}$0"
+		],
+	},
+	
+	"initialize items using ':'": {
+		"prefix": "init-items",
+		"body": [
+			"${1:item}: ${2:value},$0"
+		],
+	},
+	"initialize group item using ':'": {
+		"prefix": "init-items-group",
+		"body": [
+			"${1:groupname}: {",
+			"  ${2:item}: '${3:value}',",
+			"},$0"
+		],
+	},
+	"initialize async function": {
+		"prefix": "init-function-async",
+		"body": [
+			"async ${1:functionName}(${2|args|}$3) {",
+			"},$0"
+		],
+	},
+	"initialize let response await with return": {
+		"prefix": "init-response-await",
+		"body": [
+			"let response = await ${1|function,axios.get,axios.post,axios.put,axios.delete|}",
+			"return ${2:response}$0"
+		],
+	},
+
+	"initialize dispatch ": {
+		"prefix": "init-dispatch",
+		"body": [
+			"dispatch('${1:action}', ${2|value,response.data.token|})$0"
+		],
+	},
+	"initialize require ": {
+		"prefix": "init-require",
+		"body": [
+			"require('${1:@/}${2}')$0"
+		],
+	},	
+	"initialize localstorage get ": {
+		"prefix": "init-local-get",
+		"body": [
+			"localStorage.getItem('${1:@/}')$0"
+		],
+	},	
+	"initialize store template ": {
+		"prefix": "init-store",
+		"body": [
+			"export default {",
+			"  namespaced: true,",
+			"  state: {",
+			"    $1",
+			"  },",
+			"  getters: {",
+			"    $2",
+			"  },",
+			"  mutations: {",
+			"    $3",
+			"  },",
+			"  actions: {",
+			"    $4",
+			"  },",
+			"}$0"
+		],
+	},	
+	"initialize function vue ": {
+		"prefix": "init-function",
+		"body": [
+			"${1:functionName}(${2:args}) {",
+			"  $3",
+			"},$0"
+		],
+	},
+	"initialize commit": {
+		"prefix": "init-commit",
+		"body": [
+			"commit('${1:mutations}', ${2:value})$0"
+		],
+	},	
+	"initialize src to asset": {
+		"prefix": "init-src-asset",
+		"body": [
+			"src='@/assets/${1:asset}'$0"
+		],
+	},
+	"initialize upload file": {
+		"prefix": "init-upload-img",
+		"body": [
+			"const ${1:name} = new FormData()",
+			"${1}.append('${2:files}', ${3:value})",
+			"const ${4:Headers} = {header: {'Content-Type': '${5:multipart/form-data}'}}",
+			"axios.${6|post,put|}('${7:url}', ${1}, ${4})$0"
+
+		],
+	},
+
+
+    // SEPARATOR
+
+    "initialize route for api": {
+		"prefix": "laravel-route-api",
+		"body": [
+			"Route::${1|post,get,delete,put|}('${2:route}', [${3:controller}::class, '$2']);",
+		],
+	},
+	"initialize middleware": {
+		"prefix": "laravel-route-middleware",
+		"body": [
+			"Route::middleware(['${1|auth:sanctum|}'])",
+		],
+	},
+	"initialize group": {
+		"prefix": "laravel-route-group",
+		"body": [
+			"group(function ($1) {${2:route}});",
+		],
+	},
+	"initialize item": {
+		"prefix": "laravel-item",
+		"body": [
+			"$$table->${1|string,id,timestamp,rememberToken,timestamps,bigInteger,char,date,integer,boolean,decimal,enum,float,mediumInteger,mediumText,text,time,uuid|}('${2:name}')${3|->unique(),->nullable(),->unsigned()|}",
+		],
+	},
+	"initialize model": {
+		"prefix": "laravel-model",
+		"body": [
+			"${1:protected $$table = '$2'}",
+			"protected $$fillable = [",
+			"    ${3:fields}, $0",
+			"];",
+		],
+	},
+	"initialize public function": {
+		"prefix": "laravel-function-public",
+		"body": [
+			"public function ${1:functionName}(${2| ,Request $request|}){",
+			"    $0",
+			"}",
+		],
+	},
+	
+	"initialize validation for request": {
+		"prefix": "laravel-v-validate",
+		"body": [
+			"$${1:$request}->validate([",
+			"    '${2:fields}' => ${3:rules},",
+			"])"
+		],
+	},
+	"initialize rules for validation": {
+		"prefix": "laravel-v-rules",
+		"body": [
+			"'${1|required,max:,min:,string,integer,enum,in:,mimes:|}'"
+		],
+	},
+	"initialize where for controller": {
+		"prefix": "laravel-c-where",
+		"body": [
+			"where('${1:field}', ${2:value})${3| ,->first()|}"
+		],
+	},
+	"initialize return message with code": {
+		"prefix": "laravel-return-message",
+		"body": [
+			"return response()->json([",
+			"    'message' => '${1:message}',",
+			"]$2);$0",
+		],
+	},
+	"initialize return json": {
+		"prefix": "laravel-return-json",
+		"body": [
+			"return response()->json($2)$0",
+		],
+	},
+	"initialize store": {
+		"prefix": "laravel-store-file",
+		"body": [
+			"//storage link!",
+			"${1:$$request}->file('${2:files}')->store('${3:folder}', '${4:public}')$0"
+		],
+	},
+	"initialize create": {
+		"prefix": "laravel-create",
+		"body": [
+			"${1:Model}::create([",
+			"    '${2:fields}' => ${3:values},",
+			"    $0",
+			"]);"
+		],
+	},
+	"word-5": {
+		"prefix": "plainTextToken",
+		"body": [
+			"plainTextToken",
+		],
+	},
+
+    // SEPARATOR AGAIN!!!
+
+    
+}
