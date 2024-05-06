@@ -2,7 +2,7 @@
   "name": "lvq-qol-snippets",
   "displayName": "LVQ QOL Snippets",
   "description": "Basic quality of life snippets for laravel, vue, and quasar. This helps save time:)",
-  "version": "0.0.2",
+  "version": "6.9.69",
   "engines": {
     "vscode": "^1.8.0"
   },
@@ -45,6 +45,18 @@
       {
         "language": "html",
         "path": "./snippets/laravel.code-snippets"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/quasar.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/quasar.code-snippets"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/quasar.code-snippets"
       }
     ]
   }

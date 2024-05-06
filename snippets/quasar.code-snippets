@@ -1,0 +1,315 @@
+//basic popup proxy belum
+{
+	"Basic Popup Edit": {
+		"prefix": "quasar-make-popup-edit",
+		"body": [
+			"<q-popup-edit v-model=\"${1:data}\" v-slot=\"scope\">",
+			"  <q-input autofocus v-model=\"scope.value\" :model-value=\"scope.value\" :rules=\"[val => (val ${2:rules}) || '${3:message}']\">",
+			"    ${4| ,<template v-slot:after><q-btn icon=\"cancel\" @click.stop.prevent=\"scope.cancel\"/><q-btn icon=\"check_circle\" @click.stop.prevent=\"scope.set\"/></template>|}",
+			"  </q-input>",
+			"</q-popup-edit>"
+		],
+		"description": "Basic Popup Edit"
+	},
+	"default page with padding": {
+		"prefix": "quasar-make-page-padding",
+		"body": [
+			"<q-page padding class=\"${1:row}\">${0}</q-page>"
+		],
+		"description": "default page with padding"
+	},
+	"default toolbar": {
+		"prefix": "quasar-make-toolbar",
+		"body": [
+			"<q-toolbar ${1:shrink}>",
+			"  <q-toolbar-title>${2:title}</q-toolbar-title>",
+			"</q-toolbar>"
+		],
+		"description": "default toolbar"
+	},
+	"apply flex center with optional gap": {
+		"prefix": "quasar-apply-flex-center",
+		"body": [
+			"class=\"flex flex-center\" ${1:style=\"gap: 1rem\"}"
+		],
+		"description": "apply flex center with optional gap"
+	},
+	"quasar classes": {
+		"prefix": "quasar-classes",
+		"body": [
+			"${1|no-wrap,text-elipsis,cursor-pointer,q-gutter-md,q-col-gutter-md,q-gutter-y-md,q-col-gutter-y-md,non-selectable,text-capitalize,text-uppercase,text-lowercase,no-pointer-events,all-pointer-events,cursor-not-allowed,cursor-inherit,cursor-none,scroll,no-scroll,overflow-auto,overflow-hidden,overflow-hidden-y,fit,full-height,fullwidth,window-height,window-width,rotate-45,flip-horizontal,no-border,no-border-radius,no-box-shadow,rounded-borders,border-radius-inherit,col-12,col-sm-12,dimmed,ellipsis,invisible,hidden,disable,transparent,xs,lt-xs,gt-xs,sm,lt-sm,gt-sm,md,lt-md,gt-md,lg,lt-lg,gt-lg,xl,lt-xl,gt-xl,desktop-hide,mobile-hide,desktop-only,mobile-only,orientation-potrait,orientation-landscape,fullscreen,fixed,absolute,relative-position,float-left,on-left,vertical-top|}"
+		],
+		"description": "quasar classes"
+	},
+	"quasar label": {
+		"prefix": "quasar-labels",
+		"body": [
+			"${1|seamless,push,unmasked-value,mask=\"\",hidden,v-ripple,square,v-ripple:yellow,flat,rounded,dense,bordered,horizontal,outlined,outline,required,elevated,unelevated,no-caps,v-auto-animate,disable|},"
+		],
+		"description": "quasar label"
+	},
+	"wrap with tag": {
+		"prefix": "quasar-wrap-tag",
+		"body": [
+			"<${1|a,i,u,b,div|}>${2:$TM_SELECTED_TEXT}</${1}>"
+		],
+		"description": "Wrap with Tag in one liner"
+	},
+	"wrap with div or other element": {
+		"prefix": "quasar-wrap-div",
+		"body": [
+			"<${1:div}$0>",
+			"    ${2:$TM_SELECTED_TEXT}",
+			"</${1}>"
+		],
+		"description": "wrap with div or other element"
+	},
+	"quasar icons": {
+		"prefix": "quasar-icons",
+		"body": [
+			"${1|assignment,person,print,inbox,dashboard,login,delete_sweep,delete,close,cancel,check,check_circle,home,task,search,notifications,mail,table,logout|}"
+		],
+		"description": "quasar label"
+	},
+	"quasar href": {
+		"prefix": "quasar-labels-href",
+		"body": [
+			"href=\"${1:url}\" ${2:target=\"__blank\"}"
+		],
+		"description": "quasar href"
+	},
+	"make a basic avatar container": {
+		"prefix": "quasar-make-avatar",
+		"body": [
+			"<q-avatar size=\"$1\" color=\"$2\" ${3:squared}>$0</q-avatar>"
+		],
+		"description": "make a basic avatar container"
+	},
+	"quasar image": {
+		"prefix": "quasar-make-image",
+		"body": [
+			"<q-img src=\"$1\" ${2:style=\"object-fit: cover;\"} alt=\"$3\">"
+		],
+		"description": "quasar image"
+	},
+	"quasar button": {
+		"prefix": "quasar-make-button",
+		"body": [
+			"<q-btn label=\"${1:label}\" color=\"${2:color}\" ${3:icon=\"${4:icon}\"} ${5|rounded,flat,dense,unelevated,no-caps|} ${6| ,@click=\"\"|}>${0}</q-btn>"
+		],
+		"description": "quasar button"
+	},
+	"make a basic dialog": {
+		"prefix": "quasar-make-dialog",
+		"body": [
+			"<q-dialog v-model=\"${1:model}\" ${2:persistent} ${3:seamless} ${4:position=\"$5\"}>",
+			"    <div><q-btn label=\"close\" v-close-popup/></div>",
+			"    ${0}",
+			"</q-dialog>"
+		],
+		"description": "make a basic dialog"
+	},
+	"make a basic card": {
+		"prefix": "quasar-make-card",
+		"body": [
+			"<q-card ${1:padding}>",
+			"    <q-card-section ${2:horizontal}>",
+			"        $0",
+			"    </q-card-section>",
+			"</q-card>"
+		],
+		"description": "make a basic card"
+	},
+	//qcardsection
+	"make a basic card section": {
+		"prefix": "quasar-make-card-section",
+		"body": [
+			"<q-card-section>",
+			"    ${1:$TM_SELECTED_TEXT}$0",
+			"</q-card-section>"
+		],
+		"description": "make a basic card section"
+	},
+	//wrap in qcardsection in qcard
+	"wrap in qcardsection in qcard": {
+		"prefix": "quasar-wrap-card",
+		"body": [
+			"<q-card>",
+			"    <q-card-section>",
+			"        ${1:$TM_SELECTED_TEXT}$0",
+			"    </q-card-section>",
+			"</q-card>"
+		],
+		"description": "wrap in qcardsection in qcard"
+	},
+	"make a basic table": {
+		"prefix": "quasar-make-table",
+		"body": [
+			"<q-table ${1:hide-header} ${2:hide-bottom} :rows=\"$3\" :columns=\"${4:columns}\" ${5::rows-per-page-options=\"[$6]\"} ${7:separator=\"$8\"}>$0</q-table>"
+		],
+	},
+	//vslot template
+	"v-slot template": {
+		"prefix": "quasar-make-template",
+		"body": [
+			"<template v-slot:${1|before,after,prepend,append,loading,no-data,control,selected|}>",
+			"    $0",
+			"</template>"
+		],
+		"description": "v-slot template"
+	},
+	"v-slot template for table": {
+		"prefix": "quasar-make-template-table",
+		"body": [
+			"<template v-slot:${1|header-cell-,body-cell-|}>",
+			"    ${3:<q-tb :props=\"props\">$4</q-tb>}",
+			"    ${5:<q-th :props=\"props\">$6</q-th>}",
+			"</template>"
+		],
+		"description": "v-slot template"
+	},
+	//just word v-auto-animate and v-close-popup
+	"v-auto-animate": {
+		"prefix": "quasar-v-auto-animate",
+		"body": [
+			"v-auto-animate"
+		],
+		"description": "v-auto-animate"
+	},
+	"v-close-popup": {
+		"prefix": "quasar-v-close-popup",
+		"body": [
+			"v-close-popup"
+		],
+		"description": "v-close-popup"
+	},
+	//word v-model
+	"v-model": {
+		"prefix": "quasar-v-model",
+		"body": [
+			"v-model"
+		],
+		"description": "v-model"
+	},
+	//for @click, @mouseover, @mouseout, @change, @input, etc
+	"event listener": {
+		"prefix": "quasar-event-listener",
+		"body": [
+			"@${1|click,mouseover,mouseout,change,input|}=\"$0\""
+		],
+		"description": "event listener"
+	},
+	//qdrawer
+	"make a drawer": {
+		"prefix": "quasar-make-drawer",
+		"body": [
+			"<q-drawer v-model=\"drawer\" ${1::mini=\"miniState\"} ${2:mini-to-overlay :width=\"200\" :breakpoint=\"500\"}>",
+			"    <q-list>$0</q-list>",
+			"</q-drawer>"
+		],
+		"description": "make a drawer"
+	},
+	//basic qlist
+	"make a basic list": {
+		"prefix": "quasar-make-list",
+		"body": [
+			"<q-list ${1:bordered}>",
+			"    <q-item ${2::active=\"$3\"} ${4:active-class=\"$5\"} ${6:clickable} ${7:v-ripple}>",
+			"        <q-item-section avatar><q-icon :name=\"$8\"/></q-item-section>",
+			"        <q-item-section>$0</q-item-section>",
+			"    </q-item>",
+			"</q-list>"
+		],
+		"description": "make a basic list"
+	},
+	//only the item
+	"make a basic list item": {
+		"prefix": "quasar-make-list-item",
+		"body": [
+			"<q-item ${1::active=\"$2\"} ${3:active-class=\"$4\"} ${5:clickable} ${6:v-ripple}>",
+			"    <q-item-section avatar><q-icon :name=\"$7\"/></q-item-section>",
+			"    <q-item-section>$0</q-item-section>",
+			"</q-item>"
+		],
+	},
+	"make a basic form": {
+		"prefix": "quasar-make-form",
+		"body": [
+			"<q-form @submit.prevent=\"${1:method}\">",
+			"    <div>",
+			"        $0",
+			"    </div>",
+			"</q-form>"
+		],
+	},
+	"make a input": {
+		"prefix": "quasar-make-input",
+		"body": [
+			"<q-input ${1:required} ${2| ,flat,rounded|} ${3| ,dense|} ${4| ,outlined|} ${5| ,no-caps|}  v-model=\"$6\" type=\"$7\" ${8|placeholder=\"\", label=\"\"|}>$0</q-input>"
+		],
+	},
+	"make a file input": {
+		"prefix": "quasar-make-input-file",
+		"body": [
+			"<q-file ${1:required} ${2| ,flat,rounded|} ${3| ,dense|} ${4| ,outlined|}  ${5| ,no-caps|}  v-model=\"$6\" accept=\"${7:.png,.jpg}\" ${8| ,label=\"\"|}>$0</q-file>"
+		],
+	},
+	//simple popup proxy with div inside
+	"simple popup proxy": {
+		"prefix": "quasar-make-popup-proxy",
+		"body": [
+			"<q-popup-proxy>",
+			"    <div>$0</div>",
+			"</q-popup-proxy>"
+		],
+		"description": "simple popup proxy"
+	},
+
+	//simple q video with title src and allowfullscreen also :ratio='16/9'
+	"make a video": {
+		"prefix": "quasar-make-video",
+		"body": [
+			"<q-video title=\"$1\" src=\"$2\" ${3|allowfullscreen|} :ratio=\"$4\">$0</q-video>"
+		],
+	},
+
+	//clamp
+	"clamp": {
+		"prefix": "quasar-clamp",
+		"body": [
+			"clamp(${1:1rem}, ${2:2vw}, ${3:3rem})"
+		],
+		"description": "clamp"
+	},
+	"make a banner": {
+		"prefix": "quasar-make-banner",
+		"body": [
+			"<q-banner ${1|dense,rounded|}>",
+			"    ${0}",
+			"    <template v-slot:${2|action,avatar|}>$0</template>",
+			"</q-banner>"
+		],
+		"description": "make a banner"
+	},
+	"make a stepper": {
+		"prefix": "quasar-make-stepper",
+		"body": [
+			"<q-stepper v-model=\"${1:step}\" ${2|header-nav,contracted,alternative-labels,animated|} ${3|done-color=\"\",active-color=\"\",header-class=\"\"|}>",
+			"    <q-step :name=\"${4:1}\" title=\"$5\" ${6|icon=\"\",caption=\"\",color=\"\"|} :done=\"${7:condition}\">$0</q-step>",
+			"    <template v-slot:${8|navigation,messsage|}>",
+			"        <q-stepper-navigation>",
+			"        </q-stepper-navigation>",
+			"    </template>",
+			"</q-stepper>"
+		],
+	},
+	//basic separator
+	"make a separator": {
+		"prefix": "quasar-make-separator",
+		"body": [
+			"<q-separator ${1|horizontal,vertical|} ${2|inset,spaced|}>$0</q-separator>"
+		],
+	},
+	
+	
+}

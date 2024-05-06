@@ -97,7 +97,7 @@
 	"axios": {
 		"prefix": "init-axios",
 		"body": [
-			"axios.${1|get,post,put,delete|}('${2:url}'${3:, credentials})$0"
+			"axios.${1|get,post,put,delete|}('${2:url}'${3| ,credentials,{\\}|})$0"
 		],
 	},
 	
@@ -279,8 +279,73 @@
 			"${1}.append('${2:files}', ${3:value})",
 			"const ${4:Headers} = {header: {'Content-Type': '${5:multipart/form-data}'}}",
 			"axios.${6|post,put|}('${7:url}', ${1}, ${4})$0"
-
 		],
 	},
-    
+	//init router shell with children
+	// {
+	// 	path: '/dashboardshell',
+	// 	name: 'dashboardshell',
+	// 	component: () => import('../DashboardShell.vue'),
+	// 	beforeEnter: (to, from, next) => {
+	// 	  if (!store.getters['auth/authenticated']) {
+	// 		return next({ name: 'login' })
+	// 	  }
+	// 	  if (to.name === 'dashboardshell') {
+	// 		return next({ name: 'home' })
+	// 	  }
+	// 	  next()
+	// 	},
+	// 	children: [
+	// 	  {
+	// 		path: '/dashboard',
+	// 		name: 'home',
+	// 		component: () => import('../views/dashboard/HomeView.vue'),
+	// 	  },
+	// 	}
+	// }
+	"initialize router shell with children": {
+		"prefix": "init-router-shell",
+		"body": [
+			"{",
+			"  path: '/${1:path}', name: '${2:name}',",
+			"  component: () => import('${3:../views/}${4}'),",
+			"  beforeEnter: (to, from, next) => {",
+			"    if (!store.getters['${5:auth/authenticated}']) {return next({ name: '${6:login}' })}",
+			"    if (to.name === '${2:name}') {return next({ name: '${8:name}' })}",
+			"    next()},",
+			"  children: [",
+			"    {",
+			"      path: '/${7:path}', name: '${8:name}',",
+			"      component: () => import('${10:../views/}${11}'),",
+			"    },",
+			"  ]",
+			"},$0"
+		],
+	},
+	"initialize setup return data": {
+		"prefix": "init-setup-return-ref",
+		"body": [
+			"return {",
+			"  $1: ref(${2:value}),",
+			"}$0"
+		],
+	},
+	"initialize document visibilitychange": {
+		"prefix": "init-document-visibilitychange",
+		"body": [
+			"document.addEventListener('visibilitychange', function() {",
+			"  if (document.hidden) {document.title = '${1:}';} else {document.title = '${2:}';}",
+			"});$0"
+		],
+	},
+	//.slice and .map
+	// .slice(0, $).map(item => {return {$: item.$};})
+	//init
+	"initialize slice and map": {
+		"prefix": "init-slice-map",
+		"body": [
+			".slice(0, $1).map(item => {return {$2: item.$3};})$0"
+		],
+	},
+
 }
